@@ -125,7 +125,7 @@ public class Main {
             }
         });
 
-        JButton deleteAll = new JButton("BorrRar Lista");
+        JButton deleteAll = new JButton("BorrRRar Lista");
         mainPanel.add(
                 deleteAll,
                 new GridBagConstraints(
