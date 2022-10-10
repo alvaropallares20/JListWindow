@@ -100,8 +100,9 @@ public class Main {
             textElement.setText("");
         });
 
+        JButton delete = new JButton("Eliminar");
         mainPanel.add(
-                new JButton("Eliminar"),
+                delete,
                 new GridBagConstraints(
                         0,
                         3,
@@ -116,8 +117,17 @@ public class Main {
                         0
                 )
         );
+        delete.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                int selected = peopleList.getSelectedIndex();
+                peopleModel.removeElementAt(selected);
+            }
+        });
+
+        JButton deleteAll = new JButton("Borrar Lista");
         mainPanel.add(
-                new JButton("Borrar lista"),
+                deleteAll,
                 new GridBagConstraints(
                         1,
                         3,
@@ -132,6 +142,12 @@ public class Main {
                         0
                 )
         );
+        deleteAll.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                peopleModel.clear();
+            }
+        });
 
         f.setContentPane(mainPanel);
         f.repaint();
